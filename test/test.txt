@@ -1,0 +1,21 @@
+% has_rule((2,reduced),4).
+% has_rule((2,reduced),5).
+
+% satisfy(X, rule(R)) :- satisfy(X, program(P)), has_rule(P, R), program(P), rule(R), set(X).
+
+% set(there_model).
+% set(here_model).
+
+% satisfy(there_model, program((1,reduced))).
+% satisfy(there_model, program((2,reduced))).
+
+% program((1,reduced)).
+% program((2,reduced)).
+
+% rule(1..6).
+
+% test(P, R):- satisfy(X, program(P)), has_rule(P, R).
+
+% unknown :- not a, not -a.
+% sat :- not unknown.
+% a :- sat.

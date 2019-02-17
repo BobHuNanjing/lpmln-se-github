@@ -1,0 +1,1 @@
+clingo 0 -t 30 ./main/asp_rule_satisfaction.lp ./main/decision_tree_rcc.lp ./main/lpmln_rule_satisfaction.lp ./main/lpmln_strong_equivalence_checking.lp ./main/output_filter.lp ./main/search_spaces.lp ./main/set_relationships.lp > res.txt

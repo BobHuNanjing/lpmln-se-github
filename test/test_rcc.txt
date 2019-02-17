@@ -1,0 +1,5 @@
+
+set_op(positive_body(1),negative_body(1),intersection,non_empty). 
+set_op(negative_body(1),positive_body(1),subseteq,false). 
+set_op(positive_body(1),negative_body(1),subseteq,false). 
+set_op(negative_body(1),positive_body(1),intersection,non_empty).

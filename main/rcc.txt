@@ -1,0 +1,164 @@
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntpp(X,Z) | ntppi(X,Z) | tpp(X,Z) | eq(X,Z) :- dc(X,Y), dc(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- dc(X,Y), ec(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- dc(X,Y), po(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- dc(X,Y), tpp(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- dc(X,Y), ntpp(Y,Z), Z != X.
+dc(X,Z) :- dc(X,Y),tppi(Y,Z), Z != X.
+dc(X,Z) :- dc(X,Y),ntppi(Y,Z), Z != X.
+dc(X,Z) :- dc(X,Y),eq(Y,Z), Z != X.
+
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- ec(X,Y), dc(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | tppi(X,Z) | eq(X,Z) :- ec(X,Y), ec(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- ec(X,Y), po(Y,Z), Z != X.
+ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- ec(X,Y), tpp(Y,Z), Z != X.
+po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- ec(X,Y), ntpp(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) :- ec(X,Y), tppi(Y,Z), Z != X.
+dc(X,Z) :- ec(X,Y), ntppi(Y,Z), Z != X.
+ec(X,Z) :- ec(X,Y), eq(Y,Z), Z != X.
+
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- po(X,Y), dc(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- po(X,Y), ec(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntpp(X,Z) | ntppi(X,Z) | tpp(X,Z) | eq(X,Z) :- po(X,Y), po(Y,Z), Z != X.
+po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- po(X,Y), tpp(Y,Z), Z != X.
+po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- po(X,Y), ntpp(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- po(X,Y), tppi(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- po(X,Y), ntppi(Y,Z), Z != X.
+po(X,Z) :- po(X,Y), eq(Y,Z), Z != X.
+
+dc(X,Z) :- tpp(X,Y), dc(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) :- tpp(X,Y), ec(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- tpp(X,Y), po(Y,Z), Z != X.
+tpp(X,Z) | ntpp(X,Z) :- tpp(X,Y), tpp(Y,Z), Z != X.
+ntpp(X,Z) :- tpp(X,Y), ntpp(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | tpp(X,Z) | eq(X,Z) :- tpp(X,Y), tppi(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z):- tpp(X,Y), ntppi(Y,Z), Z != X.
+tpp(X,Z) :- tpp(X,Y), eq(Y,Z), Z != X.
+
+dc(X,Z) :- ntpp(X,Y), dc(Y,Z), Z != X.
+dc(X,Z) :- ntpp(X,Y), ec(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- ntpp(X,Y), po(Y,Z), Z != X.
+ntpp(X,Z) :- ntpp(X,Y), tpp(Y,Z), Z != X.
+ntpp(X,Z) :- ntpp(X,Y), ntpp(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- ntpp(X,Y), tppi(Y,Z), Z != X.
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntpp(X,Z) | ntppi(X,Z) | tpp(X,Z) | eq(X,Z) :- ntpp(X,Y), ntppi(Y,Z), Z != X.
+ntpp(X,Z) :- ntpp(X,Y), eq(Y,Z), Z != X.
+
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- tppi(X,Y), dc(Y,Z), Z != X.
+ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- tppi(X,Y), ec(Y,Z), Z != X.
+po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- tppi(X,Y), po(Y,Z), Z != X.
+po(X,Z) | eq(X,Z) | tpp(X,Z) | tppi(X,Z) :- tppi(X,Y), tpp(Y,Z), Z != X.
+po(X,Z) | tpp(X,Z) | ntpp(X,Z) :- tppi(X,Y), ntpp(Y,Z), Z != X.
+tppi(X,Z) | ntppi(X,Z) :- tppi(X,Y), tppi(Y,Z), Z != X.
+ntppi(X,Z) :- tppi(X,Y), ntppi(Y,Z), Z != X.
+tppi(X,Z) :- tppi(X,Y), eq(Y,Z), Z != X.
+
+dc(X,Z) | ec(X,Z) | po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- ntppi(X,Y), dc(Y,Z), Z != X.
+po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- ntppi(X,Y), ec(Y,Z), Z != X.
+po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- ntppi(X,Y), po(Y,Z), Z != X.
+po(X,Z) | tppi(X,Z) | ntppi(X,Z) :- ntppi(X,Y), tpp(Y,Z), Z != X.
+po(X,Z) | tppi(X,Z) | ntppi(X,Z) |tpp(X,Z) | ntpp(X,Z) | eq(X,Z)  :- ntppi(X,Y), ntpp(Y,Z), Z != X.
+ntppi(X,Z) :- ntppi(X,Y), tppi(Y,Z), Z != X.
+ntppi(X,Z) :- ntppi(X,Y), ntppi(Y,Z), Z != X.
+ntppi(X,Z) :- ntppi(X,Y), eq(Y,Z), Z != X.
+
+% 对于集合等同的关系
+dc(X, Y) :- ec(X,Y).
+ec(X, Y) :- dc(X,Y).
+
+tpp(X, Y) :- ntpp(X, Y).
+ntpp(X, Y) :- tpp(X, Y). 
+
+tppi(X, Y) :- ntppi(X, Y).
+ntppi(X, Y) :- tppi(X, Y).
+
+
+% 由于等价关系和集合相等的定义可能导致问题
+% % :- dc(X,Y), ec(X,Y).
+% :- dc(X,Y), po(X,Y).
+% :- dc(X,Y), tpp(X,Y).
+% :- dc(X,Y), ntpp(X,Y).
+% :- dc(X,Y), tppi(X,Y).
+% :- dc(X,Y), ntppi(X,Y).
+% :- dc(X,Y), eq(X,Y).
+% :- ec(X,Y), po(X,Y).
+% :- ec(X,Y), tpp(X,Y).
+% :- ec(X,Y), ntpp(X,Y).
+% :- ec(X,Y), tppi(X,Y).
+% :- ec(X,Y), ntppi(X,Y).
+% :- ec(X,Y), eq(X,Y).
+% :- po(X,Y), tpp(X,Y).
+% :- po(X,Y), ntpp(X,Y).
+% :- po(X,Y), tppi(X,Y).
+% :- po(X,Y), ntppi(X,Y).
+% :- po(X,Y), eq(X,Y).
+% % :- tpp(X,Y), ntpp(X,Y).
+% :- tpp(X,Y), tppi(X,Y).
+% :- tpp(X,Y), ntppi(X,Y).
+% :- tpp(X,Y), eq(X,Y).
+% :- ntpp(X,Y), tppi(X,Y).
+% :- ntpp(X,Y), ntppi(X,Y).
+% :- ntpp(X,Y), eq(X,Y).
+% % :- tppi(X,Y), ntppi(X,Y).
+% :- tppi(X,Y), eq(X,Y).
+% :- ntppi(X,Y), eq(X,Y).
+
+
+:- dc(X,X).
+:- po(X,X).
+:- ec(X,X).
+:- tpp(X,X).
+:- tppi(X,X).
+:- ntpp(X,X).
+:- ntppi(X,X).
+
+
+
+% RCC 关系公理
+
+% 交换律
+dc(X, Y) :- dc(Y, X). 
+po(X, Y) :- po(Y, X).
+eq(X, Y) :- eq(Y, X). 
+ec(X, Y) :- ec(Y, X).
+
+% 互逆
+ntpp(X, Y) :- ntppi(Y, X). 
+tpp(X, Y) :- tppi(Y, X).
+
+% 等价关系
+eq(X, Z) :- eq(X, Y), eq(Y, Z). 
+eq(X, X) :- set(X).
+
+
+
+
+% RCC 关系转为集合关系
+
+% 相离
+set_op(S1, S2, intersection, empty) :- dc(S1, S2). 
+set_op(S1, S2, subseteq, false) :- dc(S1, S2). 
+set_op(S2, S1, subseteq, false) :- dc(S1, S2). 
+
+dc(S1, S2) :- set_op(S1, S2, intersection, empty), set_op(S1, S2, subseteq, false), set_op(S2, S1, subseteq, false).
+
+% 相交
+set_op(S1, S2, intersection, non_empty) :- po(S1, S2).
+set_op(S1, S2, subseteq, false) :- po(S1, S2). 
+set_op(S2, S1, subseteq, false) :- po(S1, S2). 
+
+po(S1, S2) :- set_op(S1, S2, intersection, non_empty), set_op(S1, S2, subseteq, false), set_op(S2, S1, subseteq, false).
+
+% 相等
+set_op(S1, S2, equal, true) :- eq(S1, S2).
+
+eq(S1, S2) :- set_op(S1, S2, equal, true).
+
+% 正包含
+set_op(S1, S2, subset, true) :- ntpp(S1, S2). 
+
+ntpp(S1, S2) :- set_op(S1, S2, subset, true). 
+
+% 反包含
+set_op(S2, S1, subset, true) :- ntppi(S1, S2). 
+
+ntppi(S1, S2) :- set_op(S2, S1, subset, true). 
